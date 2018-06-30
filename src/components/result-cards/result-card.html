@@ -1,0 +1,11 @@
+<div class="containerOf">
+	<div class="actual-result">
+		<img :src="result.icon" alt="">
+		<div class="headerOF">
+			{{result.name}}	
+		</div>
+		<div class="content">
+			<star v-for="n in Math.round(result.rating)"></star>
+		</div>
+	</div>
+</div>
