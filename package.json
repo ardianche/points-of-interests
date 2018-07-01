@@ -1,7 +1,7 @@
 {
   "name": "YourSpot",
   "version": "1.0.0",
-  "description": "See the local weather instantly, no ads!",
+  "description": "You and your friends can't decide where to go? Check this app! It instantly gets your location (with your permission) and searches for nearby attractions. ",
   "author": "Ardian Ibrahimi",
   "private": true,
   "scripts": {
