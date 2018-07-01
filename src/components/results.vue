@@ -53,6 +53,7 @@ export default {
 			'CHANGE_STEP': 'CHANGE_STEP'
 		}),
 		goBack() {
+			this.$emit('ignore_auto_search',true);
 			this.CHANGE_STEP('search');
 		},
 	},

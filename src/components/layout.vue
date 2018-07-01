@@ -16,21 +16,37 @@ import { mapActions, mapState } from 'vuex';
 import nearbySearch from './search.vue';
 import searchResults from './results.vue';
 export default {
-  data: () => ({
-  }),
+  data: () => ({}),
+  mounted() {
+    navigator.geolocation.getCurrentPosition(location => {
+      this.latitude = location.coords.latitude;
+      this.longitude = location.coords.longitude;
+      let payload = {
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+        key: "AIzaSyAXF8ZWXjzr059GfLZCdb8Q6mc0wkixZEI",
+      };
+      this.automatic_search(payload);
+    });
+  },
   components: {
     nearbySearch,
     searchResults,
   },
-  computed:{
+  computed: {
     ...mapState({
-      'current_step' : state => state.current_step,
+      'current_step': state => state.current_step,
     }),
   },
   methods: {
     ...mapActions({
-      'findPlaces' : 'searchNearByPlaces',
+      'findPlaces': 'searchNearByPlaces',
     }),
+    automatic_search(payload) {
+    
+      console.log("PAYLOAD: ", payload);
+      this.findPlaces(payload);
+    },
   },
 };
 
@@ -85,7 +101,7 @@ export default {
 }
 
 .layout-content {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
