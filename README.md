@@ -1,6 +1,6 @@
-# weatherforecast
+# findUrSpot
 
-> See the local weather instantly, no ads!
+> You and your friends can't decide where to go? Check this app! It instantly gets your location (with your permission) and searches for nearby attractions. 
 
 ## Build Setup
 
